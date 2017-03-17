@@ -24,5 +24,11 @@
           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd
 ">
+    
+    <!--Now the object mapping begin-->
+    
+    <bean id="studentNoInfo" class="com.studevs.practice.model.Home">
+        
+    </bean>
 
 </beans>
