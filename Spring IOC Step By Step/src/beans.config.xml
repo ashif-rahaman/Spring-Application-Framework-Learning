@@ -28,7 +28,10 @@
     <!--Now the object mapping begin-->
     
     <bean id="studentNoInfo" class="com.studevs.practice.model.Home">
-        
     </bean>
 
+    <bean id="syudentObjectWithGS" class="com.studevs.practice.model.Home">
+        <property name="name" value="Parver Hossain"/>
+        <property name="age" value="23"/>
+    </bean>
 </beans>

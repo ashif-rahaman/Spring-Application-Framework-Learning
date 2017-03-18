@@ -6,23 +6,19 @@
 package com.studevs.practice.core;
 
 import com.studevs.practice.model.Home;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import com.studevs.practice.util.Beans;
 
 /**
  *
  * @author ashif
  */
-public class Main {
-    
-    
-    public static ApplicationContext context = new ClassPathXmlApplicationContext("beans.config.xml");
-    
+public class Main implements Beans {
+
     public static void main(String[] args) {
-        
-        Home home = (Home)context.getBean("studentNoInfo");
-        
+
+        Home home = (Home) PROVIDER.getBean("studentNoInfo");
+
         System.out.println(home.toString());
     }
-    
+
 }
