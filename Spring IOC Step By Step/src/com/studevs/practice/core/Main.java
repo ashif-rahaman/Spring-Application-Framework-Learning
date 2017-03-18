@@ -5,7 +5,6 @@
  */
 package com.studevs.practice.core;
 
-import com.studevs.practice.model.Home;
 import com.studevs.practice.util.Beans;
 
 /**
@@ -16,9 +15,21 @@ public class Main implements Beans {
 
     public static void main(String[] args) {
 
-        Home home = (Home) PROVIDER.getBean("studentNoInfo");
+        int a = 5;
+        int b = 7;
+        System.out.println(Integer.toBinaryString(a));
+        System.out.println(Integer.toBinaryString(a << 1));
+        System.out.println(a << 1);
+        System.out.println(Integer.toBinaryString(b));
+        System.out.println(Integer.toBinaryString(b >> 1));
+        System.out.println(b >> 1);
+        System.out.println("\n\n\n\n");
 
-        System.out.println(home.toString());
+        System.out.println(Integer.toBinaryString(a));
+        System.out.println(Integer.toBinaryString(b));
+        System.out.println(Integer.toBinaryString(a & b));
+        System.out.println(Integer.toBinaryString(a | b));
+        System.out.println(Integer.toBinaryString(a & 0));
+        System.out.println(Integer.toBinaryString(~a));
     }
-
 }
