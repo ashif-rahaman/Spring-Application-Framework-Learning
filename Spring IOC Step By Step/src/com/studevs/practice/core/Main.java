@@ -17,19 +17,10 @@ public class Main implements Beans {
 
         int a = 5;
         int b = 7;
-        System.out.println(Integer.toBinaryString(a));
-        System.out.println(Integer.toBinaryString(a << 1));
-        System.out.println(a << 1);
-        System.out.println(Integer.toBinaryString(b));
-        System.out.println(Integer.toBinaryString(b >> 1));
-        System.out.println(b >> 1);
-        System.out.println("\n\n\n\n");
+        System.out.println((((a << 1) << 1) << 1) == (a << 3));
+        System.out.println((a << 3) == (a * 2 * 2 * 2));
+        System.out.println((a << 2) + (a << 1) + a);
 
-        System.out.println(Integer.toBinaryString(a));
-        System.out.println(Integer.toBinaryString(b));
-        System.out.println(Integer.toBinaryString(a & b));
-        System.out.println(Integer.toBinaryString(a | b));
-        System.out.println(Integer.toBinaryString(a & 0));
-        System.out.println(Integer.toBinaryString(~a));
+        System.out.println(b == (b >> 1) << 1);
     }
 }
