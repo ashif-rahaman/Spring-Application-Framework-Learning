@@ -1,0 +1,90 @@
+যখন dependency tightly coupled হয়, তখন কোন ক্লাসের অবজেক্ট অনেক জায়গায় থাকলে একটুখানি চেন্জ করলেই ব্যাপক ঝামেলা তৈরি হয়। 
+এই dependency কে loosly coupled করার জন্য আমরা Spring Application Framework ব্যবহার করবো।
+
+আমাদের একটা Bean মানে object কনফিগার করার একটা xml ফাইল থাকবে, যেটা অবশ্যই default package এ থাকবে, সেখান থেকে আমরা যে সকল ক্লাসের object বানাতে চাই তাদের mapping করা থাকবে।
+
+SYSTEM-1:
+	<bean id="objectName_that_will_be_in_getBean("")_method" class="Full_class_path_name">
+	</bean>
+	
+	
+IMPORTANT NOTE:
+	
+	lazy loading করা হলে শুধু কেবল যখন object id দিয়ে object এর জন্য call করা হয়, শুধুমাত্র তখনই beans.xml সেই object টি create করবে। 
+	
+	Example: 
+		<bean id="objectName" class="class_path" lazy_init="true">
+			<property name="var_name" value="value_to_be_assigned"/>
+		</bean>
+		
+		
+	POINT_TO_BE_NOTED:
+		যখন একটা bean এর scope "prototype" হয় তখন সেটা by default - lazy_loading( key = lazy_init="true")
+		
+
+
+******************************************************
+*			init-method="name_of_init_method"		 *
+******************************************************
+
+		
+		যখন কোন একটা bean create করার সময় আমরা চাইবো, কোন একটা মেথড কল হোক, তখনই আমরা ঐ মেথডটাকে <bean> attribute-  init-method="" এর মধ্যে লিখে দিবো।
+		
+		আমরা আরেকটা উপায়ে এই কাজটা করতে পারি।
+		bean.xml এ একটা annotation configuration add করতে হবে।
+			<context:annotation-config />
+			এটা class এর init method এ যে annotation ব্যবহার করব সেটা translate করতে পারার জন্য
+			
+		যে class এ init method ব্যবহার করবো তার সাথে একটা annotation দিবো
+			@PostCostruct
+			public class initlialze(){
+				------
+				------
+			} 
+			
+			
+		
+		
+		
+		
+******************************************************
+*		destroy-method="name_of_destroy_method"		 *
+******************************************************
+
+		
+		যখন কোন একটা bean free করার সময়/ মানে bean টাকে গার্বেজ কালেক্টরে দেয়ার সময় আমরা চাইবো, কোন একটা মেথড কল হোক, তখনই আমরা ঐ মেথডটাকে <bean> attribute- destroy-method="" এর মধ্যে লিখে দিবো।
+		
+		
+		আমরা আরেকটা উপায়ে এই কাজটা করতে পারি।
+		bean.xml এ একটা annotation configuration add করতে হবে।
+			<context:annotation-config />
+			এটা class এর init method এ যে annotation ব্যবহার করব সেটা translate করতে পারার জন্য
+			
+		যে class এ destroy method ব্যবহার করবো তার সাথে একটা annotation দিবো
+			@PreDestroy
+			public class initlialze(){
+				------
+				------
+			} 
+			
+			
+			
+*****************************************************************
+*																*
+*		আরেকটা মাথা ঘুরানো আজাইরা system আাছে।							*
+*			1। by implementing InitializingBean,DisposableBean	*
+*			2। by implementin BeanPostProcessor					*
+*****************************************************************		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+

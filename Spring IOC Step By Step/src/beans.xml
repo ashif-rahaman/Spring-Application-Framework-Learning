@@ -26,6 +26,7 @@
 ">
     
     <context:annotation-config />
+    <!--<bean class="org.springframework.annotation.CommonAnnotationBeanPostProcessor"/>-->
     <!--Now the object mapping begin-->
     
     <bean id="studentNoInfo" class="com.studevs.practice.model.Home">

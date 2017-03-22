@@ -8,10 +8,11 @@ package com.studevs.practice.util;
 import java.io.Serializable;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
- * 
+ *
  *
  * @author ashif
  */
@@ -22,11 +23,13 @@ public class BeanProvider implements Serializable {
     public BeanProvider() {
 
         this.applicationContext = new ClassPathXmlApplicationContext("beans.xml");
+        ((AbstractApplicationContext) this.applicationContext).registerShutdownHook();
     }
 
     public BeanProvider(String configurationXMLFileName) {
 
         this.applicationContext = new ClassPathXmlApplicationContext(configurationXMLFileName);
+        ((AbstractApplicationContext) this.applicationContext).registerShutdownHook();
     }
 
     public Object getBean(String beanName) {

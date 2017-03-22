@@ -6,14 +6,12 @@
 package com.studevs.practice.model;
 
 import java.util.List;
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
 
 /**
  *
  * @author ashif
  */
-public class Home {
+public class Home{ 
 
     private String name;
     private int age;
@@ -115,16 +113,5 @@ public class Home {
         return "Home{" + "name=" + name + ", age=" + age + ", cgpa=" + cgpa + ", address=" + address + '}';
     }
 
-    @PostConstruct
-    void doInitialize() {
-        
-        System.out.println("Object Initialized");
-    }
-
-    @PreDestroy
-    void doDestroy() {
-
-        System.out.println("Object is destroying");
-    }
-
+  
 }
