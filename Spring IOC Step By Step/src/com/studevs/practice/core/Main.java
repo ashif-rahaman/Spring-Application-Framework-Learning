@@ -5,6 +5,7 @@
  */
 package com.studevs.practice.core;
 
+import com.studevs.practice.model.Home;
 import com.studevs.practice.util.Beans;
 
 /**
@@ -15,12 +16,20 @@ public class Main implements Beans {
 
     public static void main(String[] args) {
 
-        int a = 5;
-        int b = 7;
-        System.out.println((((a << 1) << 1) << 1) == (a << 3));
-        System.out.println((a << 3) == (a * 2 * 2 * 2));
-        System.out.println((a << 2) + (a << 1) + a);
+//        Home home = PROVIDER.getBean("studentObjectWithParam");
+//        System.out.println(home);
+//
+        Home home = (Home) PROVIDER.getBean("studentNoInfo");
+        System.out.println(home);
 
-        System.out.println(b == (b >> 1) << 1);
+//        home = PROVIDER.getBean("home");
+//        System.out.println(home);
+//        Home home = PROVIDER.getBean("studentFrList");
+//        List friendList = home.getFriendList();
+//        
+//        Iterator it = friendList.iterator();
+//        while (it.hasNext()) {            
+//            System.out.println(it.next());
+//        }
     }
 }

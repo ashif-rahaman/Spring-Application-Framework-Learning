@@ -11,5 +11,5 @@ package com.studevs.practice.util;
  */
 public interface Beans {
     
-    public static final BeanProvider PROVIDER = new BeanProvider("beans.config.xml");
+    public static final BeanProvider PROVIDER = new BeanProvider();
 }

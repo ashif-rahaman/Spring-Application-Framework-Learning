@@ -25,13 +25,65 @@
           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd
 ">
     
+    <context:annotation-config />
     <!--Now the object mapping begin-->
     
     <bean id="studentNoInfo" class="com.studevs.practice.model.Home">
     </bean>
 
-    <bean id="syudentObjectWithGS" class="com.studevs.practice.model.Home">
+<!--    <bean id="studentObjectWithParam" class="com.studevs.practice.model.Home">
         <property name="name" value="Parver Hossain"/>
         <property name="age" value="23"/>
+        <property name="address" value="Lalbagh"/>
     </bean>
+    
+    <bean id="studentObjectThroughConstructor" class="com.studevs.practice.model.Home" scope="prototype">      
+        <constructor-arg type="java.lang.String" value="Ashif"/>
+        <constructor-arg type="java.lang.String" value="Hello"/>
+        <constructor-arg type="int" value="23"/>
+    </bean>-->
+    
+    
+    
+    <!--tried to make an ERROR-->
+    
+    <!--    <bean class="com.studevs.practice.model.Home" id="home">
+        <constructor-arg type="java.lang.String" value="Ashif"/>
+        <constructor-arg type="int" value="23"/>
+        <constructor-arg type="float" value="23F"/>
+    </bean>-->
+    
+<!--    <bean id="studentFrList" class="com.studevs.practice.model.Home">
+        <property name="name" value="Parver Hossain"/>
+        <property name="age" value="23"/>
+        <property name="address" value="Lalbagh"/>
+        <property name="friendList">
+            <list>
+                <value>London</value>
+                <value>Jitu</value>
+                <value>Kumar</value>
+                <value>Laila</value>
+                <value>Kundol</value>
+            </list> 
+        </property>
+    </bean>
+    
+    <bean id="studentFrSet" class="com.studevs.practice.model.Home">
+        <property name="name" value="Parver Hossain"/>
+        <property name="age" value="23"/>
+        <property name="address" value="Lalbagh"/>
+        <property name="friendList">
+            <set>
+                <value>London</value>
+                <value>Jitu</value>
+                <value>Kumar</value>
+                <value>Laila</value>
+                <value>Kundol</value>
+            </set> 
+        </property>
+    </bean>-->
+    
+    
+    
+    
 </beans>

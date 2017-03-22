@@ -5,6 +5,10 @@
  */
 package com.studevs.practice.model;
 
+import java.util.List;
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 /**
  *
  * @author ashif
@@ -16,16 +20,23 @@ public class Home {
     private float cgpa;
     private String address;
 
-    
+    private List<String> friendList;
+
     /**
      * Constructors with different parameters
      */
-    
-    
+    /**
+     * Constructor No Parameter
+     */
     public Home() {
-        
+
     }
 
+    /**
+     *
+     * @param name [Type - String]
+     * @param age [Type - int]
+     */
     public Home(String name, int age) {
         this.name = name;
         this.age = age;
@@ -48,15 +59,12 @@ public class Home {
         this.cgpa = cgpa;
         this.address = address;
     }
-    
-    
-    
-    
+
     /**
      * Getters and Setters
-     * @return 
+     *
+     * @return
      */
-    
     public String getName() {
         return name;
     }
@@ -89,16 +97,34 @@ public class Home {
         this.address = address;
     }
 
+    public List<String> getFriendList() {
+        return friendList;
+    }
 
-    
+    public void setFriendList(List<String> friendList) {
+        this.friendList = friendList;
+    }
+
     /**
      * toString Implemented
-     * @return 
+     *
+     * @return
      */
-    
     @Override
     public String toString() {
         return "Home{" + "name=" + name + ", age=" + age + ", cgpa=" + cgpa + ", address=" + address + '}';
     }
-    
+
+    @PostConstruct
+    void doInitialize() {
+        
+        System.out.println("Object Initialized");
+    }
+
+    @PreDestroy
+    void doDestroy() {
+
+        System.out.println("Object is destroying");
+    }
+
 }
